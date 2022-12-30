@@ -1,8 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectorRef, Component, Input, ViewChild } from "@angular/core";
 import { FormsModule } from "@angular/forms";
-import { BrowserModule } from "@angular/platform-browser";
-import { EditorModule, EditorComponent, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
+import { EditorModule } from '@tinymce/tinymce-angular';
 import { RawEditorOptions } from 'tinymce';
 
 @Component({
@@ -21,12 +20,6 @@ import { RawEditorOptions } from 'tinymce';
   tagName="div">
   </editor>
   `,
-  // styles: [
-  //   `::ng-deep editor > div{
-  //     min-height:100%;
-  //   }
-  //   `
-  // ]
 })
 export class tinymceEditorComponent {
 
@@ -58,7 +51,6 @@ export class tinymceEditorComponent {
       toolbar_sticky: true,
       toolbar_mode: 'sliding',  // 'floating' | 'sliding' | 'scrolling' | 'wrap'
     }
-
     this.loadTinyMce = true;
     this.changeDetectorRef.detectChanges();
   }

@@ -10,32 +10,20 @@ import Quill from "quill";
   imports: [CommonModule, FormsModule],
   template: `
   <div id='editor' [class]='name'>{{data}}</div>
+  <br />
+  <br />
   <div (click)="click()">Data Console.log</div>
   `,
-  // styles: [
-  //   `::ng-deep editor > div{
-  //     min-height:100%;
-  //   }
-  //   `
-  // ]
 })
 export class quillEditorComponent {
 
-  // loadTinyMce = false;
   @Input() data = '';
   @Input() theme = 'snow';
   @Input() name = '';
-  // @Input() toolbar: string | false = 'undo redo | bold italic underline strikethrough | fontfamily fontsize blocks | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | forecolor backcolor removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media template link anchor codesample ';
-  // @Input() menubar: string | false = 'file edit view insert format tools table help';
-  // @Input() resize = false;
-
-  // initConfig: RawEditorOptions = {};
 
   editor!: Quill;
 
   constructor(private changeDetectorRef: ChangeDetectorRef) {
-
-
   }
 
 
@@ -65,8 +53,6 @@ export class quillEditorComponent {
     let quillclass = this.name == '' ? '' : '.' + this.name;
 
     this.editor = new Quill('#editor' + quillclass, options);
-
-    console.log(Quill);
   }
 
   click() {

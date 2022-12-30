@@ -7,18 +7,14 @@ import { quillEditorComponent } from 'editor-component/quilleditor';
   selector: 'quill-classic',
   imports: [quillEditorComponent],
   template: `
+  <div style='margin:60px'></div>
   <quillEditor style='' [data]="data" [theme]='theme'></quillEditor>
   <div style='margin:60px'></div>
   <a href="/">Back to Home</a>
-  <!-- <p>Style Test</p> -->
   `,
-  // styles: [`p {
-  //   font-size: 30px;
-  // }`]
 })
 export class quillInlineComponent {
 
   data = 'Just type something';
-
   theme = 'bubble'
 }
