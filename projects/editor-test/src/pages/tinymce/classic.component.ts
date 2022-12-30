@@ -1,4 +1,4 @@
-import { tinymceEditorComponent } from 'tinymce-editor/editor';
+import { tinymceEditorComponent } from 'editor-component/tinymceeditor';
 import { Component } from "@angular/core";
 
 
@@ -9,7 +9,11 @@ import { Component } from "@angular/core";
   template: `
   <tinymceEditor [data]='data'></tinymceEditor>
   <a href="/">Back to Home</a>
+  <p>Style Test</p>
   `,
+  // styles: [`p {
+  //   font-size: 30px;
+  // }`]
 })
 export class tinymceClassicComponent {
 

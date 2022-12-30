@@ -1,6 +1,6 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
-  "dest": "../../dist/tinymce-editor",
+  "dest": "../../dist/editor-component",
   "lib": {
     "entryFile": "public-api.ts"
   }

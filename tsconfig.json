@@ -20,8 +20,8 @@
     "module": "ES2022",
     "useDefineForClassFields": false,
     "paths": {
-      "tinymce-editor": ["dist/tinymce-editor"],
-      "tinymce-editor/*": ["dist/tinymce-editor/*"]
+      "editor-component": ["dist/editor-component"],
+      "editor-component/*": ["dist/editor-component/*"]
     },
     "lib": ["ES2022", "dom"]
   },

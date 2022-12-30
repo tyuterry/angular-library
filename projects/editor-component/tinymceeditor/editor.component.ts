@@ -33,8 +33,8 @@ export class tinymceEditorComponent {
   loadTinyMce = false;
   @Input() data = '';
   @Input() inline = false;
-  @Input() toolbar: string | 'false' = 'undo redo | bold italic underline strikethrough | fontfamily fontsize blocks | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | forecolor backcolor removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media template link anchor codesample ';
-  @Input() menubar: string | 'false' = 'file edit view insert format tools table help';
+  @Input() toolbar: string | false = 'undo redo | bold italic underline strikethrough | fontfamily fontsize blocks | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | forecolor backcolor removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media template link anchor codesample ';
+  @Input() menubar: string | false = 'file edit view insert format tools table help';
   @Input() resize = false;
 
   initConfig: RawEditorOptions = {};

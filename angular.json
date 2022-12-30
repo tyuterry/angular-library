@@ -3,23 +3,23 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "tinymce-editor": {
+    "editor-component": {
       "projectType": "library",
-      "root": "projects/tinymce-editor",
-      "sourceRoot": "projects/tinymce-editor/src",
+      "root": "projects/editor-component",
+      "sourceRoot": "projects/editor-component/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/tinymce-editor/ng-package.json"
+            "project": "projects/editor-component/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/tinymce-editor/tsconfig.lib.prod.json"
+              "tsConfig": "projects/editor-component/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/tinymce-editor/tsconfig.lib.json"
+              "tsConfig": "projects/editor-component/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -27,43 +27,52 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "tsConfig": "projects/tinymce-editor/tsconfig.spec.json",
+            "tsConfig": "projects/editor-component/tsconfig.spec.json",
             "polyfills": ["zone.js", "zone.js/testing"]
           }
         }
       }
     },
-    "tinymce-test": {
+    "editor-test": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
         }
       },
-      "root": "projects/tinymce-test",
-      "sourceRoot": "projects/tinymce-test/src",
+      "root": "projects/editor-test",
+      "sourceRoot": "projects/editor-test/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/tinymce-test",
-            "index": "projects/tinymce-test/src/index.html",
-            "main": "projects/tinymce-test/src/main.ts",
+            "outputPath": "dist/editor-test",
+            "index": "projects/editor-test/src/index.html",
+            "main": "projects/editor-test/src/main.ts",
             "polyfills": ["zone.js"],
-            "tsConfig": "projects/tinymce-test/tsconfig.app.json",
+            "tsConfig": "projects/editor-test/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "projects/tinymce-test/src/favicon.ico",
-              "projects/tinymce-test/src/assets",
+              "projects/editor-test/src/favicon.ico",
+              "projects/editor-test/src/assets",
               {
                 "glob": "**/*",
                 "input": "node_modules/tinymce",
                 "output": "/tinymce/"
               }
             ],
-            "styles": ["projects/tinymce-test/src/styles.scss"],
-            "scripts": ["node_modules/tinymce/tinymce.min.js"]
+            "styles": [
+              "projects/editor-test/src/styles.scss",
+              "node_modules/quill/dist/quill.core.css",
+              "node_modules/quill/dist/quill.bubble.css",
+              "node_modules/quill/dist/quill.snow.css"
+            ],
+            "scripts": [
+              "node_modules/tinymce/tinymce.min.js",
+              "node_modules/quill/dist/quill.core.js",
+              "node_modules/quill/dist/quill.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -96,10 +105,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "tinymce-test:build:production"
+              "browserTarget": "editor-test:build:production"
             },
             "development": {
-              "browserTarget": "tinymce-test:build:development"
+              "browserTarget": "editor-test:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -107,20 +116,20 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "tinymce-test:build"
+            "browserTarget": "editor-test:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "polyfills": ["zone.js", "zone.js/testing"],
-            "tsConfig": "projects/tinymce-test/tsconfig.spec.json",
+            "tsConfig": "projects/editor-test/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "projects/tinymce-test/src/favicon.ico",
-              "projects/tinymce-test/src/assets"
+              "projects/editor-test/src/favicon.ico",
+              "projects/editor-test/src/assets"
             ],
-            "styles": ["projects/tinymce-test/src/styles.scss"],
+            "styles": ["projects/editor-test/src/styles.scss"],
             "scripts": []
           }
         }

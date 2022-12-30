@@ -1,4 +1,4 @@
-import { tinymceEditorComponent } from 'tinymce-editor/editor';
+import { tinymceEditorComponent } from 'editor-component/tinymceeditor';
 import { Component, Input } from "@angular/core";
 
 
@@ -11,7 +11,6 @@ import { Component, Input } from "@angular/core";
     <tinymceEditor style='flex:0 0 50%;width:50%' [data]='data' [inline]="true"></tinymceEditor>
     <tinymceEditor style='flex:0 0 50%;width:50%' [data]='data2' [inline]="true"></tinymceEditor>
   </div>
-
   <a href="/">Back to Home</a>
   `,
 })
